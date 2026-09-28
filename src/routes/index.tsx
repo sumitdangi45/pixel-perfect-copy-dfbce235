@@ -57,6 +57,13 @@ const projects = [
   },
 ] as const;
 
+const processSteps = [
+  { number: "01", Icon: MessageSquare, title: "Discover", text: "We understand your goals, requirements and challenges." },
+  { number: "02", Icon: Lightbulb, title: "Plan", text: "We create a clear roadmap with the right technology and strategy." },
+  { number: "03", Icon: Code2, title: "Develop", text: "Our team builds, tests and keeps you updated at every step." },
+  { number: "04", Icon: Rocket, title: "Launch & Grow", text: "We deploy and support you even after launch to help you grow." },
+];
+
 function BrandMark() {
   return (
     <a href="#" className="brand" aria-label="Anni Web Solutions home">
@@ -164,15 +171,10 @@ function Index() {
           <div className="scribble process-note">Ideas<br />into<br />Reality<i /></div>
         </div>
         <div className="process-grid">
-          {[
-            ['01', MessageSquare, 'Discover', 'We understand your goals, requirements and challenges.'],
-            ['02', Lightbulb, 'Plan', 'We create a clear roadmap with the right technology and strategy.'],
-            ['03', Code2, 'Develop', 'Our team builds, tests and keeps you updated at every step.'],
-            ['04', Rocket, 'Launch & Grow', 'We deploy and support you even after launch to help you grow.'],
-          ].map(([number, Icon, title, text]) => (
-            <article className="process-card" key={String(number)}>
-              <div className="process-card-top"><span>{String(number)}</span><Icon size={25} /></div>
-              <h3>{String(title)}</h3><p>{String(text)}</p>
+          {processSteps.map(({ number, Icon, title, text }) => (
+            <article className="process-card" key={number}>
+              <div className="process-card-top"><span>{number}</span><Icon size={25} /></div>
+              <h3>{title}</h3><p>{text}</p>
             </article>
           ))}
           <a className="primary-button start-button" href="#contact">Start Your Project <ArrowRight size={16} /></a>
