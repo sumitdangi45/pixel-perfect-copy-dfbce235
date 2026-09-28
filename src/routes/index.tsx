@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, BarChart3, Box, Home, Leaf } from "lucide-react";
+import { ArrowLeft, ArrowRight, BarChart3, Box, Clock3, Code2, HeartHandshake, Leaf, Lightbulb, MessageSquare, Rocket, ShieldCheck, UserRound } from "lucide-react";
 import { useRef } from "react";
 
 import airbnbImage from "../assets/airbnb-prediction.png";
 import cryptoImage from "../assets/crypto-identification.png";
 import kisanImage from "../assets/kisan-sathi.png";
+import teamImage from "../assets/anni-team.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -122,6 +123,59 @@ function Index() {
           <div className="metric"><strong>5+</strong><span>Domains Covered</span></div>
           <div className="metric"><strong>100%</strong><span>Client Satisfaction</span></div>
           <div className="scribble scribble-bottom">Same<br />Team<br />Bigger<br />Goals<i /></div>
+        </div>
+      </section>
+
+      <section className="about-section" id="about">
+        <div className="about-copy">
+          <div className="eyebrow">ABOUT US <span /></div>
+          <h2 className="about-title">A Team That<br /><em>Builds for Impact.</em></h2>
+          <p>Anni Web Solutions Pvt. Ltd. is a tech company focused on creating high-quality websites, web apps and custom software that help businesses grow. We combine clean design, solid development and a practical approach to deliver real results.</p>
+          <div className="values">
+            <div><UserRound /><span>Client-Centric<br />Approach</span></div>
+            <div><ShieldCheck /><span>Quality &amp;<br />Transparency</span></div>
+            <div><Clock3 /><span>On-Time<br />Delivery</span></div>
+            <div><HeartHandshake /><span>Long-Term<br />Partnerships</span></div>
+          </div>
+          <div className="about-actions">
+            <a className="primary-button story-button" href="#process">Our Story <ArrowRight size={16} /></a>
+            <div className="scribble about-note">People<br />Ideas<br />Technology<br />Growth<i /></div>
+          </div>
+        </div>
+        <div className="team-photo">
+          <img src={teamImage} alt="Anni Web Solutions team collaborating around a laptop" />
+        </div>
+        <div className="about-stats">
+          <div><strong>50+</strong><span>Projects Delivered</span></div>
+          <div><strong>30+</strong><span>Happy Clients</span></div>
+          <div><strong>5+</strong><span>Industries Served</span></div>
+          <div><strong>100%</strong><span>Client Satisfaction</span></div>
+          <blockquote>“Great team, clear communication<br />and amazing results. Highly recommended!”<cite>— Our Client</cite></blockquote>
+        </div>
+      </section>
+
+      <section className="process-section" id="process">
+        <div className="process-head">
+          <div>
+            <div className="eyebrow">OUR PROCESS <span /></div>
+            <h2>From Idea to <em>Impact</em></h2>
+            <p>A simple and transparent process to bring your ideas to life.</p>
+          </div>
+          <div className="scribble process-note">Ideas<br />into<br />Reality<i /></div>
+        </div>
+        <div className="process-grid">
+          {[
+            ['01', MessageSquare, 'Discover', 'We understand your goals, requirements and challenges.'],
+            ['02', Lightbulb, 'Plan', 'We create a clear roadmap with the right technology and strategy.'],
+            ['03', Code2, 'Develop', 'Our team builds, tests and keeps you updated at every step.'],
+            ['04', Rocket, 'Launch & Grow', 'We deploy and support you even after launch to help you grow.'],
+          ].map(([number, Icon, title, text]) => (
+            <article className="process-card" key={String(number)}>
+              <div className="process-card-top"><span>{String(number)}</span><Icon size={25} /></div>
+              <h3>{String(title)}</h3><p>{String(text)}</p>
+            </article>
+          ))}
+          <a className="primary-button start-button" href="#contact">Start Your Project <ArrowRight size={16} /></a>
         </div>
       </section>
     </main>
