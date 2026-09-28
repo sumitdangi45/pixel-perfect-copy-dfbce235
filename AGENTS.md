@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- The home page is a single responsive featured-projects showcase matching the supplied visual reference; preserve its three-card carousel composition and warm editorial styling.
