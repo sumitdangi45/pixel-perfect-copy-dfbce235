@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, BarChart3, Box, Clock3, Code2, HeartHandshake, Leaf, Lightbulb, MessageSquare, Rocket, ShieldCheck, UserRound } from "lucide-react";
+import { ArrowLeft, ArrowRight, BarChart3, Box, Clock3, Code2, HeartHandshake, Leaf, Lightbulb, Menu, MessageSquare, Rocket, ShieldCheck, UserRound } from "lucide-react";
 import { useRef } from "react";
 
 import airbnbImage from "../assets/airbnb-prediction.png";
@@ -86,7 +86,9 @@ function Index() {
             <a key={item} className={item === 'Home' ? 'active' : ''} href={`#${item.toLowerCase().replace(' ', '-')}`}>{item}</a>
           ))}
         </nav>
-        <a className="primary-button header-cta" href="#contact">Get a Free Quote <ArrowRight size={17} /></a>
+        <a className="primary-button header-cta" href="#contact">
+          <span>Get a Free Quote</span><ArrowRight className="header-arrow" size={17} /><Menu className="menu-icon" size={24} />
+        </a>
       </header>
 
       <section className="projects-section" id="projects">
@@ -153,10 +155,10 @@ function Index() {
           <img src={teamImage} alt="Anni Web Solutions team collaborating around a laptop" />
         </div>
         <div className="about-stats">
-          <div><strong>50+</strong><span>Projects Delivered</span></div>
-          <div><strong>30+</strong><span>Happy Clients</span></div>
-          <div><strong>5+</strong><span>Industries Served</span></div>
-          <div><strong>100%</strong><span>Client Satisfaction</span></div>
+          <div><strong>50+</strong><span className="desktop-stat-label">Projects Delivered</span><span className="mobile-stat-label">Projects</span></div>
+          <div><strong>30+</strong><span className="desktop-stat-label">Happy Clients</span><span className="mobile-stat-label">Clients</span></div>
+          <div><strong>5+</strong><span className="desktop-stat-label">Industries Served</span><span className="mobile-stat-label">Industries</span></div>
+          <div><strong>100%</strong><span className="desktop-stat-label">Client Satisfaction</span><span className="mobile-stat-label">Satisfaction</span></div>
           <blockquote>“Great team, clear communication<br />and amazing results. Highly recommended!”<cite>— Our Client</cite></blockquote>
         </div>
       </section>
