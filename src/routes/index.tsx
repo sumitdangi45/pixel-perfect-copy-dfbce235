@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, BarChart3, Box, Clock3, Code2, HeartHandshake, Leaf, Lightbulb, Menu, MessageSquare, Rocket, ShieldCheck, UserRound } from "lucide-react";
+import { ArrowLeft, ArrowRight, BarChart3, Box, Clock3, Code2, Github, Headphones, HeartHandshake, Instagram, Leaf, Lightbulb, LockKeyhole, Mail, MapPin, Menu, MessageSquare, Phone, Rocket, ShieldCheck, UserRound, Youtube } from "lucide-react";
 import { useRef } from "react";
 
+import { Button } from "@/components/ui/button";
 import airbnbImage from "../assets/airbnb-prediction.png";
+import locationImage from "../assets/bhopal-location.png";
+import officeImage from "../assets/contact-office.png";
 import cryptoImage from "../assets/crypto-identification.png";
 import kisanImage from "../assets/kisan-sathi.png";
 import teamImage from "../assets/anni-team.png";
@@ -70,6 +73,34 @@ function BrandMark() {
       <span className="brand-symbol" aria-hidden="true"><i /><b /></span>
       <span><strong>Anni</strong><small>WEB SOLUTIONS PVT. LTD.</small></span>
     </a>
+  );
+}
+
+const contactDetails = [
+  { Icon: MapPin, title: "Our Office", detail: "Bhopal, Madhya Pradesh, India" },
+  { Icon: Mail, title: "Email Us", detail: "hello@anniwebsolutions.com" },
+  { Icon: Phone, title: "Call Us", detail: "+91 98765 43210" },
+  { Icon: Clock3, title: "Working Hours", detail: "Mon - Sat, 10:00 AM - 7:00 PM" },
+];
+
+function ContactForm() {
+  return (
+    <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
+      <h2>Tell Us About Your Project</h2>
+      <p>Fill in the details and we’ll get back to you within 24 hours.</p>
+      <div className="form-grid">
+        <label>Your Name <b>*</b><input required placeholder="Enter your name" /></label>
+        <label>Your Email <b>*</b><input required type="email" placeholder="Enter your email" /></label>
+        <label>Your Phone <b>*</b><input required type="tel" placeholder="Enter your phone number" /></label>
+        <label>Business/Company (Optional)<input placeholder="Enter company name" /></label>
+        <label className="form-wide">Service You Need <b>*</b><select required defaultValue=""><option value="" disabled>Select a service</option><option>Website Development</option><option>Web Application</option><option>Mobile App Development</option><option>AI &amp; ML Solutions</option></select></label>
+        <label className="form-wide">Project Details <b>*</b><textarea required placeholder="Tell us about your project, goals and requirements..." /></label>
+        <label>Estimated Budget (Optional)<select defaultValue=""><option value="" disabled>Select budget range</option><option>₹25k – ₹50k</option><option>₹50k – ₹1L</option><option>₹1L+</option></select></label>
+        <label>Preferred Timeline (Optional)<select defaultValue=""><option value="" disabled>Select timeline</option><option>1 month</option><option>2–3 months</option><option>3+ months</option></select></label>
+      </div>
+      <Button type="submit" className="send-button">Send Message <ArrowRight /></Button>
+      <small><LockKeyhole /> Your information is safe with us. We respect your privacy.</small>
+    </form>
   );
 }
 
@@ -182,6 +213,44 @@ function Index() {
           <a className="primary-button start-button" href="#contact">Start Your Project <ArrowRight size={16} /></a>
         </div>
       </section>
+
+      <section className="contact-section" id="contact">
+        <div className="contact-copy">
+          <div className="eyebrow">GET IN TOUCH <span /></div>
+          <h2>Let’s Discuss<br /><em>Your Project</em></h2>
+          <p>Have an idea in mind? We’d love to hear about it. Share your requirements and our team will get back to you with the best solution.</p>
+          <div className="contact-details">
+            {contactDetails.map(({ Icon, title, detail }) => (
+              <div key={title}><span><Icon /></span><p><strong>{title}</strong><small>{detail}</small></p></div>
+            ))}
+          </div>
+          <div className="scribble contact-note">Let’s<br />Build<br />Together<i /></div>
+        </div>
+        <ContactForm />
+        <aside className="contact-visual">
+          <img src={officeImage} alt="Modern Anni Web Solutions office workspace" />
+          <div className="consultation"><span><Headphones /></span><p><strong>Free Consultation</strong><small>Talk to our experts and get the right guidance for your project.</small></p></div>
+        </aside>
+      </section>
+
+      <section className="location-section">
+        <img src={locationImage} alt="Map showing the Anni Web Solutions office in Bhopal" />
+        <div className="location-copy">
+          <div className="eyebrow">OUR LOCATION <span /></div>
+          <h2>Visit Us at <em>Our Office</em></h2>
+          <p>We’re based in Bhopal, India. Let’s meet and turn your ideas into reality.</p>
+          <a className="location-button" href="https://maps.google.com/?q=Bhopal+Madhya+Pradesh" target="_blank" rel="noreferrer">Get Directions <ArrowRight /></a>
+        </div>
+        <div className="map-pin"><MapPin /><p><strong>Anni Web Solutions</strong><span>Bhopal, Madhya Pradesh</span></p></div>
+      </section>
+
+      <footer className="site-footer">
+        <div className="footer-about"><BrandMark /><p>Helping businesses grow with modern websites, web apps and custom software.</p><div className="socials"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Instagram"><Instagram /></a><a href="#" aria-label="YouTube"><Youtube /></a><a href="#" aria-label="GitHub"><Github /></a></div></div>
+        <div><h3>Quick Links</h3>{['Home', 'About', 'Services', 'Projects', 'Blog', 'Contact'].map((item) => <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>)}</div>
+        <div><h3>Our Services</h3>{['Website Development', 'Web Application', 'Mobile App Development', 'Custom Software', 'AI & ML Solutions', 'Digital Consulting'].map((item) => <span key={item}>{item}</span>)}</div>
+        <div className="footer-contact"><h3>Contact Us</h3><span><MapPin /> Bhopal, India</span><a href="mailto:hello@anniwebsolutions.com"><Mail /> hello@anniwebsolutions.com</a><a href="tel:+919876543210"><Phone /> +91 98765 43210</a><span><Clock3 /> Mon - Sat, 10AM - 7PM</span></div>
+        <div className="footer-bottom"><span>© 2026 Anni Web Solutions Pvt. Ltd. All rights reserved.</span><nav><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Sitemap</a></nav></div>
+      </footer>
     </main>
   );
 }
