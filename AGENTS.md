@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- The home page is a single responsive featured-projects showcase matching the supplied visual reference; preserve its three-card carousel composition and warm editorial styling.
+- The home page is a single responsive agency showcase matching supplied references; preserve its editorial project carousel, about, process, contact, location, and footer flow.
