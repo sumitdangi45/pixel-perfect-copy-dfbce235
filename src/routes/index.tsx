@@ -233,16 +233,15 @@ function Index() {
         </aside>
       </section>
 
-      <section className="location-section">
+      <a
+        className="location-section"
+        href="https://maps.google.com/?q=Bhopal+Madhya+Pradesh"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Get directions to the Anni Web Solutions office in Bhopal"
+      >
         <img src={locationImage} alt="Map showing the Anni Web Solutions office in Bhopal" />
-        <div className="location-copy">
-          <div className="eyebrow">OUR LOCATION <span /></div>
-          <h2>Visit Us at <em>Our Office</em></h2>
-          <p>We’re based in Bhopal, India. Let’s meet and turn your ideas into reality.</p>
-          <a className="location-button" href="https://maps.google.com/?q=Bhopal+Madhya+Pradesh" target="_blank" rel="noreferrer">Get Directions <ArrowRight /></a>
-        </div>
-        <div className="map-pin"><MapPin /><p><strong>Anni Web Solutions</strong><span>Bhopal, Madhya Pradesh</span></p></div>
-      </section>
+      </a>
 
       <footer className="site-footer">
         <div className="footer-about"><BrandMark /><p>Helping businesses grow with modern websites, web apps and custom software.</p><div className="socials"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Instagram"><Instagram /></a><a href="#" aria-label="YouTube"><Youtube /></a><a href="#" aria-label="GitHub"><Github /></a></div></div>
