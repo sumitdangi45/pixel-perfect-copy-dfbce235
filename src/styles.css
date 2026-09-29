@@ -256,8 +256,7 @@ h1 em { color: var(--copper); font-style: normal; }
   .contact-form > small { font-size: 6px; }
   .contact-visual { display: contents; }
   .contact-visual > img { display: none; }
-  .location-section { order: initial; min-height: 107px; margin: 0 12px 12px; }
-  .location-section::after { background: linear-gradient(90deg, var(--primary) 0%, color-mix(in oklab, var(--primary) 72%, transparent) 56%, color-mix(in oklab, var(--primary) 20%, transparent)); }
+  .location-section { margin: 0 12px 12px; }
   .consultation { margin: 0; min-height: 66px; }
   .site-footer { display: none; }
 }
