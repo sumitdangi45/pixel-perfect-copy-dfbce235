@@ -169,9 +169,6 @@ h1 em { color: var(--copper); font-style: normal; }
 
 .location-section { display: block; margin: 0 2.5% 23px; border-radius: 8px; overflow: hidden; position: relative; }
 .location-section > img { display: block; width: 100%; height: auto; }
-.map-pin { position: absolute; z-index: 2; left: 66%; top: 50%; transform: translate(-50%, -50%); }
-.map-pin > svg { width: 40px; height: 40px; padding: 9px; border-radius: 50%; background: var(--copper); }
-.map-pin strong { font-size: 10px; }.map-pin span { font-size: 8px; }
 
 .site-footer { padding: 0 5% 17px; display: grid; grid-template-columns: 1.3fr .75fr 1fr 1.25fr; gap: 38px; background: var(--surface); }
 .site-footer > div { padding-top: 19px; display: flex; flex-direction: column; align-items: flex-start; }
@@ -261,11 +258,6 @@ h1 em { color: var(--copper); font-style: normal; }
   .contact-visual > img { display: none; }
   .location-section { order: initial; min-height: 107px; margin: 0 12px 12px; }
   .location-section::after { background: linear-gradient(90deg, var(--primary) 0%, color-mix(in oklab, var(--primary) 72%, transparent) 56%, color-mix(in oklab, var(--primary) 20%, transparent)); }
-  .location-copy { width: 100%; padding: 14px; }
-  .location-copy .eyebrow, .location-copy h2, .location-copy > p { display: none; }
-  .location-button { position: absolute; top: 54px; left: 14px; white-space: nowrap; }
-  .map-pin { left: 14px; top: 11px; transform: none; gap: 8px; }
-  .map-pin > svg { width: 34px; height: 34px; padding: 8px; }
   .consultation { margin: 0; min-height: 66px; }
   .site-footer { display: none; }
 }
